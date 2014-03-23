@@ -11,7 +11,11 @@ function initializeFeed(data) {
 }
 
 function addItem(item) {
-	$parent.append('<li><a href="'+ item.link +'">'+ item.title +'</a></li>');
+	$parent.append('<li><a href="'+ item.link +'">'+ shorten(item.title) +'</a></li>');
+}
+
+function shorten(title) {
+	return (title.length > 50 ? title.substring(0, 49) +'&hellip;' : title)
 }
 
 function fetchFeed() {
