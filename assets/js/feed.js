@@ -10,7 +10,7 @@
 		};
 
 		this.addItem = function(item) {
-			this.parent.append('<li>'+ item.title +'</li>');
+			this.parent.append('<li><a href="'+ item.link +'">'+ item.title +'</a></li>');
 		};
 
 		this.initializeFeed = function(data) {
