@@ -11,7 +11,7 @@ function initializeFeed(data) {
 }
 
 function addItem(item) {
-	$parent.append('<li><a href="'+ item.link +'">'+ shorten(item.title) +'</a></li>');
+	$parent.append('<li><a href="'+ item.link +'">'+ shorten(item.title) +'</a><br /><span class="date">'+ item.pubDate +'</span></li>');
 }
 
 function shorten(title) {

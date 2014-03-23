@@ -1,45 +1,81 @@
 ﻿@media all and (orientation:portrait) {
-    @-ms-viewport {
-        width:320px;
-        user-zoom: fixed;
-        max-zoom: 1;
-        min-zoom: 1;
-    }
+	@-ms-viewport {
+		width:320px;
+		user-zoom: fixed;
+		max-zoom: 1;
+		min-zoom: 1;
+	}
 }
 
 @media all and (orientation:landscape) {
-    @-ms-viewport {
-        width:480px;
-        user-zoom: fixed;
-        max-zoom: 1;
-        min-zoom: 1;
-    }
+	@-ms-viewport {
+		width:480px;
+		user-zoom: fixed;
+		max-zoom: 1;
+		min-zoom: 1;
+	}
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
+p, ul, ol, li, img {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: normal;
+}
+
+ul, li {
+	list-style: none;
 }
 
 body {
-    font-size: 11pt;
-    font-family: "Segoe WP";
-    letter-spacing: 0.02em;
-    background-color: #000000;
-    color: #ffffff;
-    margin-left: 24px;
+	-ms-touch-action: none;
+	background: #000;
+	font-family: Segoe WP,helvetica,sans-serif;
+	line-height: 1;
+	color: #fff;
+	-webkit-user-select: none;
+	-webkit-text-size-adjust: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-moz-user-select: none;
+	-moz-text-size-adjust: none;
+	-moz-tap-highlight-color: rgba(0, 0, 0, 0);
+	-ms-user-select: none;
+	-ms-text-size-adjust: none;
+	-ms-tap-highlight-color: rgba(0, 0, 0, 0);
+	user-select: none;
+	text-size-adjust: none;
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	-moz-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	-ms-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 a {
-    font-size: 18pt;    
-    font-family: "Segoe WP";
-    letter-spacing: 0.02em;
-    color: #51a0e2;
-    margin-left: 24px;
+	font-size: 13pt;    
+	font-family: Segoe WP,helvetica,sans-serif;
+	letter-spacing: 0.02em;
+	color: #51a0e2;
+	font-weight: bold;
 }
 
-#page-title {
-    font-size: 24pt;
+#content li {
+	float: left;
+	width: 100%;
+	display: block;
+	padding-bottom: 20px;
+	clear: both;
+	line-height: 110%;
 }
+
+#content li .date {
+	color: #999;
+	font-size: 11pt;
+}
+
+img.logo {
+	width: 100%;
+	padding-bottom: 20px;
+}
+
