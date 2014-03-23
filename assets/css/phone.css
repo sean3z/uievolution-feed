@@ -28,7 +28,7 @@ ul, li {
 }
 
 body {
-	-ms-touch-action: none;
+	/* -ms-touch-action: none; */
 	background: #000;
 	font-family: Segoe WP,helvetica,sans-serif;
 	line-height: 1;
