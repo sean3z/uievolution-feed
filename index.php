@@ -6,6 +6,7 @@
 		<title>PWFantasy Feed</title>
 	</head>
 	<body class="dotnet">
+		<img src="assets/img/PWNLogo22_crop.jpg" class="logo" />
 		<ul id="content"></ul>
 		<script type="text/javascript" src="assets/js/zepto.min.js"></script>
 		<script type="text/javascript" src="assets/js/feed.js"></script>
