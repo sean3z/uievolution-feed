@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="assets/css/phone.css" />
 		<title>PWFantasy Feed</title>
 	</head>
-	<body>
+	<body class="dotnet">
 		<ul id="content"></ul>
 		<script type="text/javascript" src="assets/js/zepto.min.js"></script>
 		<script type="text/javascript" src="assets/js/feed.js"></script>
