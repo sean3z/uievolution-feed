@@ -1,37 +1,27 @@
-(function ($) {
-	function Feed(data) {
-		this.data = data || {};
-		this.parent = $('ul#content');
+// unfortunately js on windows phone 8 ie10 is limited
+var $parent = $('ul#content');
 
-		this.__construct = function(data) {
-			if (typeof data != 'undefined') {
-				this.initializeFeed(data);
-			}
+function initializeFeed(data) {
+	var items = data.item;
+	if (typeof items != 'undefined' && items.length > 0) {
+		for(var i = 0; i <= items.length-1; i++) {
+			addItem(items[i]);
 		};
-
-		this.addItem = function(item) {
-			this.parent.append('<li><a href="'+ item.link +'">'+ item.title +'</a></li>');
-		};
-
-		this.initializeFeed = function(data) {
-			var items = data.item;
-			if (typeof items != 'undefined' && items.length > 0) {
-				for(item in items) {
-					// console.log('item', items[item]);
-					this.addItem(items[item]);
-				}
-			}
-		};
-
-		this.__construct(data);
 	}
+}
 
+function addItem(item) {
+	$parent.append('<li><a href="'+ item.link +'">'+ item.title +'</a></li>');
+}
 
-	$(document).ready(function() {
-		$.ajax({
-			url: 'http://pwfantasy.com/feed/api/feed.php',
-			dataType: 'json',
-			success: Feed
-		});
+function fetchFeed() {
+	$.ajax({
+		url: 'http://pwfantasy.com/feed/api/feed.php',
+		dataType: 'json',
+		success: initializeFeed
 	});
-})($);
+}
+
+$(document).ready(function() {
+	fetchFeed();
+});
