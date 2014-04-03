@@ -6,7 +6,7 @@ header('Access-Control-Allow-Origin: *');
 class Feed {
 	private $url, $feed;
 
-	function __construct($url) {
+	public function __construct($url) {
 		$this->url = $url;
 		$this->feed = $this->parse($this->scrape());
 	}
@@ -42,12 +42,19 @@ class Feed {
 		}
 	}
 
+	private function _cleanup() {
+		foreach($this->feed->item as $item) {
+			$item->title = (string)$item->title;
+		}
+	}
+
 	public function json_feed() {
+		$this->_cleanup();
 		return json_encode($this->feed);
 	}
 }
 
-$url = 'http://prowrestling.net/artman/publish/rss.xml';
+$url = 'http://prowrestling.net/rss.xml.php';
 if (isset($_GET['site']) && $_GET['site'] == 'pwtorch') $url = 'http://pwtorch.com/artman2/publish/rss.xml';
 
 $feed = new Feed($url);
