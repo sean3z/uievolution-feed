@@ -2,6 +2,7 @@
 var $parent = $('ul#content');
 
 function initializeFeed(data) {
+	$parent.empty();
 	var items = data.item;
 	if (typeof items != 'undefined' && items.length > 0) {
 		for(var i = 0; i <= items.length-1; i++) {
@@ -20,7 +21,7 @@ function shorten(title) {
 
 function fetchFeed() {
 	$.ajax({
-		url: 'http://pwfantasy.com/feed/api/feed.php',
+		url: 'api/feed.php',
 		dataType: 'json',
 		success: initializeFeed
 	});
