@@ -12,7 +12,7 @@ function initializeFeed(data) {
 
 	$('#content a').bind('click', function(e) {
 		e.preventDefault();
-		console.log('hit');
+
 		var site = $('body').attr('class');
 		ga('send', 'pageview', {
 			'page': fragmentURL(site, this.href),
