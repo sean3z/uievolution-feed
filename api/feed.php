@@ -56,6 +56,6 @@ class Feed {
 
 $url = 'http://prowrestling.net/rss.xml.php';
 if (isset($_GET['site']) && $_GET['site'] == 'pwtorch') $url = 'http://pwtorch.com/artman2/publish/rss.xml';
-
+//file_put_contents('log.txt', date('m/d/Y h:m') .' '. $_GET['site'] .' '. $_SERVER['REMOTE_ADDR'] .' '. "\r\n", FILE_APPEND);
 $feed = new Feed($url);
 echo $feed->json_feed();
